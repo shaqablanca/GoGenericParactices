@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func createIterator(collection []int) <-chan int {
 	ch := make(chan int)
 
@@ -13,13 +11,4 @@ func createIterator(collection []int) <-chan int {
 	}()
 
 	return ch
-}
-
-func main() {
-	data := []int{1, 2, 3, 4, 5}
-	iterator := createIterator(data)
-
-	for item := range iterator {
-		fmt.Println(item)
-	}
 }
